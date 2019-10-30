@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Norsica.Default.Construction", "R5T.Norsica.Default.Construction\R5T.Norsica.Default.Construction.csproj", "{E0E2C09B-0C4E-454F-9B7B-C110C255607A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Norsica.Default.Construction", "R5T.Norsica.Default.Construction\R5T.Norsica.Default.Construction.csproj", "{E0E2C09B-0C4E-454F-9B7B-C110C255607A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Norsica.Default", "R5T.Norsica.Default\R5T.Norsica.Default.csproj", "{6261575E-A49E-42E5-99CF-4BF252BF644B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Norsica.Default", "R5T.Norsica.Default\R5T.Norsica.Default.csproj", "{6261575E-A49E-42E5-99CF-4BF252BF644B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Norsica.Default.Testing", "R5T.Norsica.Default.Testing\R5T.Norsica.Default.Testing.csproj", "{3099E991-F623-4876-9668-76B6E61A44DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Norsica.Default.Testing", "R5T.Norsica.Default.Testing\R5T.Norsica.Default.Testing.csproj", "{3099E991-F623-4876-9668-76B6E61A44DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Dependencies", "_Dependencies", "{84451C63-BFF8-4BBF-A8A9-A91C5DF83C21}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Norsica.Base", "..\..\R5T.Norsica.Base\source\R5T.Norsica.Base\R5T.Norsica.Base.csproj", "{741D4603-684C-4AE1-B853-B85DC115DFD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E0E2C09B-0C4E-454F-9B7B-C110C255607A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,5 +59,26 @@ Global
 		{3099E991-F623-4876-9668-76B6E61A44DD}.Release|x64.Build.0 = Release|Any CPU
 		{3099E991-F623-4876-9668-76B6E61A44DD}.Release|x86.ActiveCfg = Release|Any CPU
 		{3099E991-F623-4876-9668-76B6E61A44DD}.Release|x86.Build.0 = Release|Any CPU
+		{741D4603-684C-4AE1-B853-B85DC115DFD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{741D4603-684C-4AE1-B853-B85DC115DFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{741D4603-684C-4AE1-B853-B85DC115DFD8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{741D4603-684C-4AE1-B853-B85DC115DFD8}.Debug|x64.Build.0 = Debug|Any CPU
+		{741D4603-684C-4AE1-B853-B85DC115DFD8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{741D4603-684C-4AE1-B853-B85DC115DFD8}.Debug|x86.Build.0 = Debug|Any CPU
+		{741D4603-684C-4AE1-B853-B85DC115DFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{741D4603-684C-4AE1-B853-B85DC115DFD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{741D4603-684C-4AE1-B853-B85DC115DFD8}.Release|x64.ActiveCfg = Release|Any CPU
+		{741D4603-684C-4AE1-B853-B85DC115DFD8}.Release|x64.Build.0 = Release|Any CPU
+		{741D4603-684C-4AE1-B853-B85DC115DFD8}.Release|x86.ActiveCfg = Release|Any CPU
+		{741D4603-684C-4AE1-B853-B85DC115DFD8}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{741D4603-684C-4AE1-B853-B85DC115DFD8} = {84451C63-BFF8-4BBF-A8A9-A91C5DF83C21}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53CF6DF3-D18C-40CC-933A-3E2679D6A1D7}
 	EndGlobalSection
 EndGlobal
