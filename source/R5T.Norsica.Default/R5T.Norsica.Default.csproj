@@ -5,9 +5,10 @@
     <NoWarn>1701;1702;1591;1573</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\R5T.Caledonia.Base\source\R5T.Caledonia.Base\R5T.Caledonia.Base.csproj" />
     <ProjectReference Include="..\..\..\R5T.Norsica.Base\source\R5T.Norsica.Base\R5T.Norsica.Base.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Code\Services\Definitions\" />
+    <ProjectReference Include="..\..\..\R5T.Norsica.Commands\source\R5T.Norsica.Commands\R5T.Norsica.Commands.csproj" />
+    <ProjectReference Include="..\..\..\R5T.Norsica.Configuration\source\R5T.Norsica.Configuration\R5T.Norsica.Configuration.csproj" />
+    <ProjectReference Include="..\..\..\R5T.Volos\source\R5T.Volos\R5T.Volos.csproj" />
   </ItemGroup>
 </Project>
