@@ -1,29 +1,29 @@
-﻿using System;
+﻿//using System;
 
-using R5T.Caledonia;
-
-
-namespace R5T.Norsica.Default
-{
-    public class DefaultDotnetCommandLineOperatorCore : IDotnetCommandLineOperatorCore
-    {
-        private ICommandLineInvocationOperator CommandLineInvocationOperator { get; }
+//using R5T.Caledonia;
 
 
-        public DefaultDotnetCommandLineOperatorCore(ICommandLineInvocationOperator commandLineInvocationOperator)
-        {
-            this.CommandLineInvocationOperator = commandLineInvocationOperator;
-        }
+//namespace R5T.Norsica.Default
+//{
+//    public class DefaultDotnetCommandLineOperatorCore : IDotnetCommandLineOperatorCore
+//    {
+//        private ICommandLineInvocationOperator CommandLineInvocationOperator { get; }
 
-        public void Publish(string projectFilePath, string outputDirectoryPath, string buildConfigurationName, string frameworkName)
-        {
-            var command = "dotnet";
 
-            var arguments = $"publish \"{projectFilePath}\" --configuration {buildConfigurationName} --framework {frameworkName} --output \"{outputDirectoryPath}\"";
+//        public DefaultDotnetCommandLineOperatorCore(ICommandLineInvocationOperator commandLineInvocationOperator)
+//        {
+//            this.CommandLineInvocationOperator = commandLineInvocationOperator;
+//        }
 
-            var result = this.CommandLineInvocationOperator.Run(CommandLineInvocation.New(command, arguments));
+//        public void Publish(string projectFilePath, string outputDirectoryPath, string buildConfigurationName, string frameworkName)
+//        {
+//            var command = "dotnet";
 
-            Console.Write(result.GetOutputText());
-        }
-    }
-}
+//            var arguments = $"publish \"{projectFilePath}\" --configuration {buildConfigurationName} --framework {frameworkName} --output \"{outputDirectoryPath}\"";
+
+//            var result = this.CommandLineInvocationOperator.Run(CommandLineInvocation.New(command, arguments));
+
+//            Console.Write(result.GetOutputText());
+//        }
+//    }
+//}

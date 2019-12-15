@@ -5,8 +5,9 @@
     <NoWarn>1701;1702;1591;1573</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\R5T.Angleterria\source\R5T.Angleterria\R5T.Angleterria.csproj" />
-    <ProjectReference Include="..\..\..\R5T.Caledonia.Default\source\R5T.Caledonia.Default\R5T.Caledonia.Default.csproj" />
     <ProjectReference Include="..\..\..\R5T.Norsica.Base\source\R5T.Norsica.Base\R5T.Norsica.Base.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Code\Services\Definitions\" />
   </ItemGroup>
 </Project>
