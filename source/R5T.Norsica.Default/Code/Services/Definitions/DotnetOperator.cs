@@ -23,9 +23,9 @@ namespace R5T.Norsica.Default
 
         private void Execute(string arguments)
         {
-            var gitExecutableFilePath = this.DotnetExecutableFilePathProvider.GetDotnetExecutableFilePath();
+            var dotnetExecutableFilePath = this.DotnetExecutableFilePathProvider.GetDotnetExecutableFilePath();
 
-            var invocation = CommandLineInvocation.New(gitExecutableFilePath, arguments);
+            var invocation = CommandLineInvocation.New(dotnetExecutableFilePath, arguments);
 
             var result = this.CommandLineInvocationOperator.Run(invocation);
 
