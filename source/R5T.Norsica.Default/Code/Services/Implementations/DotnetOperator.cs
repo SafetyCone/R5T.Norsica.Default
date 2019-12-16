@@ -21,8 +21,10 @@ namespace R5T.Norsica.Default
             this.DotnetExecutableFilePathProvider = dotnetExecutableFilePathProvider;
         }
 
-        private void Execute(string arguments)
+        private void Execute(ICommandBuilderContext commandBuilder)
         {
+            var arguments = commandBuilder.BuildCommand();
+
             var dotnetExecutableFilePath = this.DotnetExecutableFilePathProvider.GetDotnetExecutableFilePath();
 
             var invocation = CommandLineInvocation.New(dotnetExecutableFilePath, arguments);
@@ -46,7 +48,19 @@ namespace R5T.Norsica.Default
                 .Sln()
                 .SetOutputDirectoryPath(solutionDirectoryPath)
                 .SetName(solutionName)
-                .BuildCommand();
+                ;
+
+            this.Execute(command);
+        }
+
+        public void CreateNewProjectFile(string projectTemplateShortName, string projectDirectoryPath, string projectName)
+        {
+            var command = DotnetCommandLine.New()
+                .New()
+                .CSharpProject(projectTemplateShortName)
+                .SetProjectName(projectName)
+                .SetOutputDirectory(projectDirectoryPath)
+                ;
 
             this.Execute(command);
         }
