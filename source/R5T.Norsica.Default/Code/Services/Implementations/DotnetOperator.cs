@@ -2,6 +2,8 @@
 
 using R5T.Caledonia;
 using R5T.Heraklion;
+using R5T.Heraklion.Default;
+using R5T.Heraklion.Extensions;
 
 using R5T.Norsica.Commands;
 using R5T.Norsica.Configuration;
@@ -21,31 +23,18 @@ namespace R5T.Norsica.Default
             this.DotnetExecutableFilePathProvider = dotnetExecutableFilePathProvider;
         }
 
-        private void Execute(ICommandBuilderContext commandBuilder)
+        private void Execute(ICommandBuilderContext command)
         {
-            var arguments = commandBuilder.BuildCommand();
-
             var dotnetExecutableFilePath = this.DotnetExecutableFilePathProvider.GetDotnetExecutableFilePath();
 
-            var invocation = CommandLineInvocation.New(dotnetExecutableFilePath, arguments);
-
-            var result = this.CommandLineInvocationOperator.Run(invocation);
-
-            if (result.ExitCode != 0)
-            {
-                throw new Exception($"Execution failed. Error:\n{result.GetErrorText()}\nOutput:\n{result.GetOutputText()}\nArguments:\n{arguments}");
-            }
-            else
-            {
-                Console.WriteLine(result.GetOutputText());
-                Console.WriteLine(result.GetErrorText());
-            }
+            this.CommandLineInvocationOperator.Execute(dotnetExecutableFilePath, command);
         }
 
         public void CreateNewSolutionFile(string solutionDirectoryPath, string solutionName)
         {
-            var command = DotnetCommandLine.New().New()
-                .Sln()
+            var command = DotnetCommandLine.Start()
+                .New()
+                .Solution2019() // Use the 2019 solution.
                 .SetOutputDirectoryPath(solutionDirectoryPath)
                 .SetName(solutionName)
                 ;
@@ -55,11 +44,21 @@ namespace R5T.Norsica.Default
 
         public void CreateNewProjectFile(string projectTemplateShortName, string projectDirectoryPath, string projectName)
         {
-            var command = DotnetCommandLine.New()
+            var command = DotnetCommandLine.Start()
                 .New()
                 .CSharpProject(projectTemplateShortName)
                 .SetProjectName(projectName)
                 .SetOutputDirectory(projectDirectoryPath)
+                ;
+
+            this.Execute(command);
+        }
+
+        public void AddProjectFileToSolutionFile(string solutionFilePath, string projectFilePath)
+        {
+            var command = DotnetCommandLine.Start()
+                .Sln(solutionFilePath)
+                .Add(projectFilePath)
                 ;
 
             this.Execute(command);
