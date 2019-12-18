@@ -10,9 +10,9 @@ namespace R5T.Norsica.Default
 {
     public static class DotnetCommandLine
     {
-        public static ICommandBuilderContext<DotnetContext> New()
+        public static ICommandBuilderContext<DotnetContext> Start()
         {
-            var dotnetContext = CommandLine.New<DotnetContext>();
+            var dotnetContext = CommandLine.Start<DotnetContext>();
             return dotnetContext;
         }
     }
