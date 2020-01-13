@@ -3,7 +3,6 @@
 using R5T.Caledonia;
 using R5T.Heraklion;
 using R5T.Heraklion.Default;
-using R5T.Heraklion.Extensions;
 
 using R5T.Norsica.Commands;
 using R5T.Norsica.Configuration;
@@ -59,6 +58,18 @@ namespace R5T.Norsica.Default
             var command = DotnetCommandLine.Start()
                 .Sln(solutionFilePath)
                 .Add(projectFilePath)
+                ;
+
+            this.Execute(command);
+        }
+
+        public void Publish(string projectFilePath, string outputDirectoryPath, string buildConfigurationName, string frameworkName)
+        {
+            var command = DotnetCommandLine.Start()
+                .Publish(projectFilePath)
+                .SetBuildConfigurationName(buildConfigurationName)
+                .SetFramework(frameworkName)
+                .SetOutputDirectoryPath(outputDirectoryPath)
                 ;
 
             this.Execute(command);
