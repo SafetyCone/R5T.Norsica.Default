@@ -1,16 +1,16 @@
-﻿using System;
+using System;
 
 using R5T.Caledonia;
 using R5T.Heraklion;
 using R5T.Heraklion.Default;
 
 using R5T.Norsica.Commands;
-using R5T.Norsica.Configuration;
+using R5T.Norsica.Configuration;using R5T.T0064;
 
 
 namespace R5T.Norsica.Default
-{
-    public class DotnetOperator : IDotnetOperator
+{[ServiceImplementationMarker]
+    public class DotnetOperator : IDotnetOperator,IServiceImplementation
     {
         private ICommandLineInvocationOperator CommandLineInvocationOperator { get; }
         private IDotnetExecutableFilePathProvider DotnetExecutableFilePathProvider { get; }
